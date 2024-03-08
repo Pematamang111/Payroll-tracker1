@@ -1,58 +1,65 @@
+
+// Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
- //Collect employee data
+
+//Collect employee data
 const collectEmployees = function() {
+
+  const employeesTotalArray = [];
+
+     let addEmployee = true;
+
+     while(addEmployee){
+      let firstName = prompt("Enter first name.");
+      let lastName = prompt("Enter last name.");
+      let salary = prompt("Enter Salary");
+
+      if(isNaN(salary)){
+        salary = 0;
+      }
+
+      salary = parseInt(salary);
   
-const employeesArray = [];
+    const info = {
+      fName: firstName,
+      lName: lastName,
+      amount: salary
+    }
 
- function runAgain() {
-  let firstName = prompt("Enter first name.");
-  let lastName = prompt("Enter last name.");
-  let salary = prompt("Enter Salary");
-  
-    const employee = {
-      firstName: firstName,
-      lastName: lastName,
-      salary: salary
-    };
+    employeesTotalArray.push(info);
 
-  
+    /*console.log(info.fName);
+    console.log(employeesTotalArray);*/
 
-let question = true;
- question = confirm("Do you want to add more employee?");
+    addEmployee = confirm("Do you want to add more employee?");
 
+  }
 
-    if(question === true){
-      runAgain();
-    } else {
-      const newEmployeeArray = employeesArray.push(employee);
-      return newEmployeeArray;
-    };
+    return employeesTotalArray;
 
-
-    
-  };
-};
-    
-
-
-
+    }
   
 
-
-    
-
-
-
-
-// Display the average salary
+  // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
+// TODO: Calculate and display the average salary
+let 
+
+
+
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+
+let randomNumber = Math.random(); //brings 0-0.99999
+    randomNumber = Math.random()*employeesArray.length; 
+    randomNumber = Math.floor(Math.random()*employeesArray.length);
+
+
+console.log(`Congratulations to ${employeesArray[randomNumber].fName} ${employeesArray[randomNumber].lName}. Our random drawing winner}`)
 }
 
 /*
