@@ -6,49 +6,52 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 //Collect employee data
 const collectEmployees = function() {
 
-  const employeesTotalArray = [];
-
+  //create array to push input
+  const employeesArray = [];
+ //create variable booleon for while 
      let addEmployee = true;
 
-     while(addEmployee){
+     while (addEmployee) {
       let firstName = prompt("Enter first name.");
       let lastName = prompt("Enter last name.");
       let salary = prompt("Enter Salary");
-
+ //if salary is not a number = 0
       if(isNaN(salary)){
         salary = 0;
       }
 
       salary = parseInt(salary);
-  
-    const info = {
-      fName: firstName,
-      lName: lastName,
-      amount: salary
+  //create object to save the inputs by user
+    const employee = {
+      firstName: firstName,
+      lastName: lastName,
+      salary: salary
     }
-
-    employeesTotalArray.push(info);
-
-    /*console.log(info.fName);
-    console.log(employeesTotalArray);*/
-
+  //pushing coming values to the array
+    employeesArray.push(employee);
+  //placing confirm if user wants to continue
     addEmployee = confirm("Do you want to add more employee?");
 
   }
+  //if not continuing then returning array
+    return employeesArray;
 
-    return employeesTotalArray;
-
-    }
+    };
   
 
   // Display the average salary
 const displayAverageSalary = function(employeesArray) {
 // TODO: Calculate and display the average salary
-let 
 
+     /*
+     //This code hasn't finished yet
+     const totalSalary = employee.salary;
+     const averageSalary = totalSalary/employeesArray.length;
 
-
-}
+    console.log(`The average salary between our ${employeesArray.length} employee(s) is ${averageSalary}`);
+}   
+     */
+     }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
@@ -58,8 +61,9 @@ let randomNumber = Math.random(); //brings 0-0.99999
     randomNumber = Math.random()*employeesArray.length; 
     randomNumber = Math.floor(Math.random()*employeesArray.length);
 
+   const randomEmployee = employeesArray[randomNumber];
 
-console.log(`Congratulations to ${employeesArray[randomNumber].fName} ${employeesArray[randomNumber].lName}. Our random drawing winner}`)
+console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}. Our random drawing winner!`)
 }
 
 /*
