@@ -19,12 +19,10 @@ N/A
 
 Please refer to the LICENSE in the repo.
 
-## Screenshot
-1 (./Screenshot.img.png)
-2 (./Screenshot.img2.png)
-3 (./Screenshot.img3.png)
-
-
 ## Deployed link
 Here is my deployed link for Payroll-tracker1.
 https://pematamang111.github.io/Payroll-tracker1/
+
+## Screenshot
+![alt text](<Screenshot (184).png>) ![alt text](<Screenshot (183).png>)
+
